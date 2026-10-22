@@ -1,6 +1,17 @@
 # Klubrio — Campus Life, Upgraded
 
+> **🌐 Live Demo:** [https://klubrio.vercel.app/](https://klubrio.vercel.app/)
+
 Klubrio is a modern, production-grade web application connecting campus clubs, student communities, event organizers, and participants.
+
+---
+
+## 🌐 Live Deployment
+
+The application is deployed and hosted on Vercel:
+- **Production URL:** [https://klubrio.vercel.app/](https://klubrio.vercel.app/)
+- **Repository:** [https://github.com/shanmukh-dotcom/KLUBRIO](https://github.com/shanmukh-dotcom/KLUBRIO)
+- **CI/CD:** Automated preview and production builds powered by Vercel & GitHub Actions.
 
 ---
 

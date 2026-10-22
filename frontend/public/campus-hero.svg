@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fdf6e3"/>
+      <stop offset="40%" stop-color="#fceabb"/>
+      <stop offset="70%" stop-color="#f8b500"/>
+      <stop offset="100%" stop-color="#e87d0d"/>
+    </linearGradient>
+    <linearGradient id="building" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d1d5db"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="960" cy="400" r="80" fill="#fbbf24" opacity="0.8"/>
+  <!-- Buildings -->
+  <rect x="300" y="300" width="400" height="780" fill="url(#building)" rx="4"/>
+  <rect x="320" y="280" width="360" height="20" fill="#9ca3af"/>
+  <!-- Pillars -->
+  <rect x="350" y="380" width="30" height="700" fill="#e5e7eb"/>
+  <rect x="420" y="380" width="30" height="700" fill="#e5e7eb"/>
+  <rect x="490" y="380" width="30" height="700" fill="#e5e7eb"/>
+  <rect x="560" y="380" width="30" height="700" fill="#e5e7eb"/>
+  <rect x="630" y="380" width="30" height="700" fill="#e5e7eb"/>
+  <!-- Right building -->
+  <rect x="800" y="350" width="300" height="730" fill="#c4b5a0" rx="4"/>
+  <rect x="850" y="400" width="50" height="60" fill="#a3947e"/>
+  <rect x="950" y="400" width="50" height="60" fill="#a3947e"/>
+  <rect x="850" y="500" width="50" height="60" fill="#a3947e"/>
+  <rect x="950" y="500" width="50" height="60" fill="#a3947e"/>
+  <!-- Banner on building -->
+  <rect x="1140" y="320" width="120" height="300" fill="#1e1b4b" rx="4"/>
+  <text x="1200" y="380" fill="rgba(255,255,255,0.7)" font-size="12" text-anchor="middle" font-family="sans-serif">IDEAS</text>
+  <text x="1200" y="410" fill="rgba(255,255,255,0.7)" font-size="12" text-anchor="middle" font-family="sans-serif">PEOPLE</text>
+  <text x="1200" y="440" fill="rgba(255,255,255,0.7)" font-size="12" text-anchor="middle" font-family="sans-serif">COMMUNITIES</text>
+  <text x="1200" y="470" fill="rgba(255,255,255,0.7)" font-size="12" text-anchor="middle" font-family="sans-serif">IMPACT</text>
+  <!-- Steps -->
+  <polygon points="200,1080 300,700 800,700 900,1080" fill="#b8b0a0"/>
+  <polygon points="300,1080 350,780 650,780 700,1080" fill="#c4b5a0"/>
+  <line x1="300" y1="760" x2="700" y2="760" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+  <line x1="320" y1="800" x2="680" y2="800" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+  <!-- Trees -->
+  <circle cx="150" cy="400" r="80" fill="#2d5016" opacity="0.7"/>
+  <circle cx="120" cy="350" r="60" fill="#3f6d1e" opacity="0.6"/>
+  <circle cx="1400" cy="450" r="100" fill="#2d5016" opacity="0.7"/>
+  <circle cx="1450" cy="380" r="70" fill="#3f6d1e" opacity="0.6"/>
+  <circle cx="1600" cy="500" r="80" fill="#1e4d0f" opacity="0.5"/>
+  <!-- Ground -->
+  <rect x="0" y="900" width="1920" height="180" fill="#8b7355" opacity="0.3"/>
+  <!-- Students silhouettes -->
+  <circle cx="500" cy="820" r="8" fill="#374151"/>
+  <rect x="496" y="828" width="8" height="20" fill="#374151" rx="2"/>
+  <circle cx="540" cy="825" r="8" fill="#374151"/>
+  <rect x="536" y="833" width="8" height="20" fill="#374151" rx="2"/>
+  <circle cx="580" cy="830" r="8" fill="#374151"/>
+  <rect x="576" y="838" width="8" height="15" fill="#374151" rx="2"/>
+  <!-- City skyline in background -->
+  <rect x="1300" y="500" width="40" height="200" fill="#6b7280" opacity="0.2"/>
+  <rect x="1360" y="450" width="30" height="250" fill="#6b7280" opacity="0.15"/>
+  <rect x="1410" y="520" width="50" height="180" fill="#6b7280" opacity="0.2"/>
+  <rect x="1500" y="480" width="35" height="220" fill="#6b7280" opacity="0.15"/>
+</svg>

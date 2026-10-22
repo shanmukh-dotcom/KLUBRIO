@@ -13,7 +13,14 @@ import { useAuth } from '@/lib/auth-context';
 import { MOCK_COLLEGES } from '@/mocks/data';
 import { cn } from '@/lib/utils';
 
-const NAV_ITEMS = [
+interface NavItem {
+  href: string;
+  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  label: string;
+  badge?: string;
+}
+
+const NAV_ITEMS: NavItem[] = [
   { href: '/student/home', icon: Home, label: 'Home' },
   { href: '/student/discover', icon: Compass, label: 'Explore' },
   { href: '/student/events', icon: Calendar, label: 'Events' },

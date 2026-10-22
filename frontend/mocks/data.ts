@@ -224,7 +224,7 @@ export const MOCK_NOTIFICATIONS: Notification[] = [
   },
   {
     id: 'notif-3',
-    type: 'announcement',
+    type: 'club',
     title: 'Club Announcement',
     summary: 'AI & Robotics Club announced the autumn orientation schedule.',
     timestamp: '2026-10-18T08:45:00Z',

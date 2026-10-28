@@ -35,6 +35,21 @@ npm run build
 npm run start
 ```
 
+### Backend API
+
+The backend lives in [`backend/`](backend/) (Python, FastAPI, PostgreSQL, Redis). It needs Docker and [uv](https://docs.astral.sh/uv/):
+
+```bash
+cd backend
+docker compose up -d
+uv sync
+cp .env.example .env
+uv run alembic upgrade head
+uv run uvicorn app.main:app --reload
+```
+
+The API runs on [http://localhost:8000/api/v1](http://localhost:8000/api/v1/docs). See [`backend/README.md`](backend/README.md) for connecting the frontend, the worker and the tests.
+
 ---
 
 ## 📁 Project Architecture
@@ -101,6 +116,13 @@ KLUBRIO/
 │   ├── lib/                   # AuthContext, ToastContext, formatting utils
 │   ├── mocks/                 # Typed mock data (clubs, events, participants, etc.)
 │   └── types/                 # TypeScript interfaces
+│
+├── backend/                   # FastAPI API: accounts, Events, Registrations, Posters, Certificates
+│   ├── app/                   # One package per module, plus core/ and jobs/
+│   ├── migrations/            # Alembic database migrations
+│   ├── tests/                 # pytest suite (runs against Docker Postgres and Redis)
+│   ├── scripts/               # create_admin, e2e run, load test, OpenAPI export
+│   └── docs/api/openapi.json  # The API contract for the frontend
 └── README.md
 ```
 

@@ -1,0 +1,49 @@
+[project]
+name = "orgniser-backend"
+version = "0.1.0"
+description = "Backend for ORGniser: Club Events, Registrations, Posters, Exports, Attendance and Certificates."
+requires-python = ">=3.12"
+dependencies = [
+    "alembic>=1.14",
+    "argon2-cffi>=25.1.0",
+    "email-validator>=2.2",
+    "fastapi>=0.115",
+    "openpyxl>=3.1.5",
+    "pdfplumber>=0.11.10",
+    "pillow>=13.0.0",
+    "psycopg[binary]>=3.2",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "pypdf>=6.21.2",
+    "pypdfium2>=5.14.0",
+    "python-multipart>=0.0.20",
+    "qrcode>=8.2",
+    "redis>=5.0",
+    "reportlab>=5.1.0",
+    "rq>=2.0",
+    "sqlalchemy>=2.0",
+    "uvicorn[standard]>=0.32",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28",
+    "opencv-python-headless>=5.0.0.93",
+    "pytest>=8.3",
+    "ruff>=0.8",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI's File(...) / Depends(...) defaults are the intended pattern.
+extend-immutable-calls = ["fastapi.File", "fastapi.Depends", "fastapi.Query"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

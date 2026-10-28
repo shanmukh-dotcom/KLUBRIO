@@ -1,0 +1,10 @@
+# Store text with LF in the repo; Windows checkouts convert as usual.
+* text=auto eol=lf
+
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary

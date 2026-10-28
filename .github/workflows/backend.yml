@@ -1,0 +1,54 @@
+name: Backend CI
+
+on:
+  push:
+    paths: ["backend/**", ".github/workflows/backend.yml"]
+  pull_request:
+    paths: ["backend/**", ".github/workflows/backend.yml"]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: orgniser
+          POSTGRES_PASSWORD: orgniser
+          POSTGRES_DB: orgniser
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U orgniser -d orgniser"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+
+    env:
+      ORGNISER_ENVIRONMENT: test
+      ORGNISER_DATABASE_URL: postgresql+psycopg://orgniser:orgniser@localhost:5432/orgniser
+      ORGNISER_REDIS_URL: redis://localhost:6379/0
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --locked
+      - run: uv run ruff format --check .
+      - run: uv run ruff check .
+      - run: uv run alembic upgrade head
+      - name: Models match migrations
+        run: uv run alembic check
+      - run: uv run pytest -q
+      - name: OpenAPI spec is up to date
+        run: |
+          uv run python scripts/export_openapi.py
+          git diff --exit-code docs/api/openapi.json

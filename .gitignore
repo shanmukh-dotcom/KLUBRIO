@@ -40,3 +40,14 @@ yarn-error.log*
 .pnpm-debug.log*
 .DS_Store
 Thumbs.db
+
+# Backend (Python / FastAPI)
+!backend/.env.example
+backend/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+# Local stand-ins for file storage and email (backend/docs/PROTOTYPE notes in backend/README.md)
+backend/storage/
+backend/outbox/
